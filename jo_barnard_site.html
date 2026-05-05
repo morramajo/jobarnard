@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Industrial designer, entrepreneur, author and speaker. Founder and Creative Director of Morrama.">
+  <title>Jo Barnard</title>
+  <style>
+    /* ── TOKENS ── */
+    :root {
+      --bg: #f5f4f0;
+      --ink: #1a1a18;
+      --mid: #6b6b65;
+      --rule: #d8d6d0;
+      --accent: #1a1a18;
+      --font: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      --max: 680px;
+      --gap: clamp(2rem, 5vw, 4rem);
+    }
+
+    /* ── RESET ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font);
+      font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── LAYOUT ── */
+    .wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: var(--gap) clamp(1.25rem, 5vw, 2rem);
+    }
+
+    section { padding: var(--gap) 0; border-top: 1px solid var(--rule); }
+    section:first-child { border-top: none; }
+
+    /* ── HEADER ── */
+    header {
+      padding: clamp(3rem, 8vw, 6rem) clamp(1.25rem, 5vw, 2rem) 0;
+      max-width: var(--max);
+      margin: 0 auto;
+    }
+
+    .name {
+      font-size: clamp(1.6rem, 4vw, 2.2rem);
+      font-weight: 500;
+      letter-spacing: -0.02em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .tagline {
+      font-size: clamp(0.95rem, 1.8vw, 1.1rem);
+      color: var(--mid);
+      max-width: 480px;
+    }
+
+    /* ── PHOTO ── */
+    .photo-wrap {
+      margin: var(--gap) 0 0;
+      border-top: 1px solid var(--rule);
+      padding-top: var(--gap);
+    }
+
+    .photo-wrap img {
+      width: 100%;
+      max-width: 340px;
+      display: block;
+      filter: grayscale(15%);
+      /* ── SWAP THIS SRC for your actual photo ── */
+    }
+
+    /* ── SECTION LABELS ── */
+    .label {
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--mid);
+      margin-bottom: 1.25rem;
+    }
+
+    /* ── BODY COPY ── */
+    p { margin-bottom: 1em; }
+    p:last-child { margin-bottom: 0; }
+
+    a { color: var(--ink); text-decoration: underline; text-underline-offset: 3px; }
+    a:hover { color: var(--mid); }
+
+    /* ── PRESS LIST ── */
+    .press { list-style: none; }
+    .press li {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 90px 1fr;
+      gap: 1rem;
+      align-items: baseline;
+    }
+    .press li:first-child { border-top: 1px solid var(--rule); }
+
+    .press .pub {
+      font-size: 0.78rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--mid);
+      white-space: nowrap;
+    }
+
+    .press .headline a {
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .press .headline a:hover { text-decoration: underline; }
+
+    /* ── TALKS LIST ── */
+    .talks { list-style: none; }
+    .talks li {
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--rule);
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 1rem;
+      align-items: baseline;
+      font-size: 0.95rem;
+    }
+    .talks li:first-child { border-top: 1px solid var(--rule); }
+
+    .talks .date {
+      color: var(--mid);
+      font-size: 0.78rem;
+      white-space: nowrap;
+    }
+
+    .talks a { text-decoration: none; }
+    .talks a:hover { text-decoration: underline; }
+
+    /* ── YEAR DIVIDER ── */
+    .year-row {
+      font-size: 0.72rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--mid);
+      padding: 1rem 0 0.25rem;
+      grid-column: 1 / -1;
+    }
+
+    /* ── CTA ── */
+    .cta-wrap { padding: var(--gap) 0; }
+
+    .cta {
+      display: inline-block;
+      background: var(--ink);
+      color: var(--bg);
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      padding: 0.85rem 2rem;
+      transition: background 0.15s ease, color 0.15s ease;
+    }
+    .cta:hover { background: var(--mid); color: var(--bg); }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2rem clamp(1.25rem, 5vw, 2rem);
+      max-width: var(--max);
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      font-size: 0.82rem;
+      color: var(--mid);
+    }
+
+    footer a { color: var(--mid); text-decoration: none; }
+    footer a:hover { color: var(--ink); }
+
+    .footer-links { display: flex; gap: 1.5rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 480px) {
+      .press li, .talks li { grid-template-columns: 1fr; gap: 0.2rem; }
+      .press .pub, .talks .date { font-size: 0.72rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <p class="name">Jo Barnard</p>
+    <p class="tagline">Industrial designer, entrepreneur, author and speaker. Founder and Creative Director of <a href="https://morrama.com">Morrama</a>.</p>
+  </header>
+
+  <main class="wrap">
+
+    <!-- PHOTO -->
+    <!-- ── To update: replace the src below with a path to your image ── -->
+    <div class="photo-wrap">
+      <img src="YOUR-PHOTO.jpg" alt="Jo Barnard" width="340" height="440">
+    </div>
+
+    <!-- ABOUT -->
+    <section>
+      <p class="label">About</p>
+      <p>I'm a trained industrial designer. I founded product design and innovation agency <a href="https://morrama.com">Morrama</a> in 2015, aged 24, and have built it into a multi-award-winning team behind products that have raised over $20 million in investment and sold tens of millions of units worldwide.</p>
+      <p>I'm also a Director of <a href="https://kibu.family">Kibu</a>, a circular kids-tech brand, and <a href="https://ecoflotest.com">Eco-Flo Innovations</a>, a plastic-free diagnostics company. In 2022 I co-founded <a href="https://designdeclares.com">Design Declares</a>, a not-for-profit climate initiative with chapters now active in over 54 countries.</p>
+      <p>I believe we work in an industry reliant on production and consumption — and that awareness carries responsibility. I've authored the <a href="https://sustainabledesignhandbook.com">Sustainable Design Handbook</a>, the <a href="https://morrama.com/startup-guide">Startup Guide: Taking a Product to Market</a>, and most recently <a href="https://morrama.com/product/from-people-to-planet"><em>From People to Planet: Lessons from a Design Agency</em></a>. I've been an Associate Lecturer at the Royal College of Art and have been featured in the BBC, WIRED, Dezeen and The Times.</p>
+    </section>
+
+    <!-- CLIENTS -->
+    <section>
+      <p class="label">Clients</p>
+      <p>Logitech, Diageo, Google, Unilever, Mokobara</p>
+    </section>
+
+    <!-- PRESS -->
+    <section>
+      <p class="label">Features</p>
+      <ul class="press">
+        <li>
+          <span class="pub">Dezeen</span>
+          <span class="headline"><a href="https://www.dezeen.com/2025/07/08/running-clubs-jo-barnard-opinion/">Design studios should start organising running clubs</a></span>
+        </li>
+        <li>
+          <span class="pub">Dezeen</span>
+          <span class="headline"><a href="https://www.dezeen.com/2025/05/22/regenerative-design-jo-barnard-opinion/">What on earth is regenerative design?</a></span>
+        </li>
+        <li>
+          <span class="pub">BusinessGreen</span>
+          <span class="headline"><a href="https://www.businessgreen.com/opinion/4174863/sustainable-product-design-requires-holistic-th">Sustainable product design requires holistic thinking</a></span>
+        </li>
+        <li>
+          <span class="pub">D&AD</span>
+          <span class="headline"><a href="https://www.dandad.org/annual/2023/editorial/voices-why-the-creative-industry-needs-to-redefine-sustainable-future">Why the creative industry needs to redefine 'good'</a></span>
+        </li>
+        <li>
+          <span class="pub">The Times</span>
+          <span class="headline"><a href="https://www.thetimes.co.uk/article/designers-come-together-to-make-their-mark-on-campaign-against-climate-change-g9str5trb">Designers come together to fight climate change</a></span>
+        </li>
+        <li>
+          <span class="pub">Core77</span>
+          <span class="headline"><a href="https://www.core77.com/posts/109782/20-Woman-led-Industrial-Design-n-Innovation-Firms">20 woman-led industrial design firms to know</a></span>
+        </li>
+        <li>
+          <span class="pub">BBC</span>
+          <span class="headline"><a href="https://www.bbc.co.uk/news/av/business-58970363">CEO Secrets</a></span>
+        </li>
+        <li>
+          <span class="pub">Creative Review</span>
+          <span class="headline"><a href="https://www.creativebrief.com/bite/voices/my-search-female-industrial-design-role-models">My search for female industrial design role models</a></span>
+        </li>
+        <li>
+          <span class="pub">About Time</span>
+          <span class="headline"><a href="https://www.abouttimemagazine.co.uk/life/shestartedit100-top-10-women-to-watch-in-tech-and-stem-2020/">Top 10 women to watch in tech and STEM</a></span>
+        </li>
+        <li>
+          <span class="pub">WIRED</span>
+          <span class="headline">Elon Musk Does It. Sergey Brin Does It. Your Boss Might Do It.</span>
+        </li>
+        <li>
+          <span class="pub">Fast Company</span>
+          <span class="headline"><a href="https://www.fastcompany.com/90751596/millions-of-plastic-covid-tests-end-up-in-landfills-this-biodegradable-test-could-be-a-game-changer">The biodegradable COVID test that could be a game-changer</a></span>
+        </li>
+      </ul>
+    </section>
+
+    <!-- TALKS -->
+    <section>
+      <p class="label">Talks &amp; workshops</p>
+      <ul class="talks">
+        <li><span class="year-row">2025</span></li>
+        <li><span class="date">23 May</span><span><a href="https://www.eventbrite.co.uk/e/design-climate-less-is-more-tickets-1273540857989">Less is More — Design Declares</a></span></li>
+        <li><span class="date">18 Jun</span><span><a href="https://www.makeup-in-paris.com/en/conferences/67eea5d1309259d216d685b5">British Beauty: Unleashing market potential — MakeUp in Paris</a></span></li>
+        <li><span class="date">24 Jun</span><span>Marrying Cost Pressures with Sustainability Demands — Environmental Packaging Summit</span></li>
+        <li><span class="date">27 Jun</span><span><a href="https://www.eventbrite.co.uk/e/practical-sustainability-in-industrial-design-tickets-1383661772609">Practical Sustainability in Industrial Design — Design Declares</a></span></li>
+        <li><span class="date">11 Jul</span><span><a href="https://www.newdesigners.com/sustainability-what-does-it-really-mean-and-how-do-we-ensure-its-integrity/">What does sustainability really mean? — New Designers</a></span></li>
+        <li><span class="date">9 Sep</span><span><a href="https://www.worlddesigncongresslondon.com/en/programme-page">Waste Not, Want Not — World Design Congress</a></span></li>
+        <li><span class="date">10 Sep</span><span><a href="https://www.worlddesigncongresslondon.com/en/programme-page">Ideas to Action: Workshop with Design Declares — World Design Congress</a></span></li>
+        <li><span class="date">11 Sep</span><span><a href="https://www.eventbrite.com/e/win-ldn-presents-unconference-designing-the-next-decade-tickets-1438223899399">Designing the Next Decade — Women in Innovation Unconference</a></span></li>
+        <li><span class="date">14 Oct</span><span><a href="https://professionals.tarkett.co.uk/en_GB/node/inspire-circular-programme-event-2-21841">Inspire Circular — Tarkett</a></span></li>
+        <li><span class="date">27 Nov</span><span><a href="https://zwc.ca/speakers/Pages/default.aspx">Designing for a Regenerative Future (keynote) — Canada's Zero Waste Conference</a></span></li>
+        <li><span class="date">1 Dec</span><span><a href="https://www.dezeen.com/eventsguide/2025/12/dezeen-one-hundred-shoreditch-sustainable-changemakers/">Sustainable Changemakers — Dezeen</a></span></li>
+        <li><span class="date">9 Dec</span><span><a href="https://www.plusxinnovation.com/">Circularity Sessions — Plus X Innovation</a></span></li>
+
+        <li><span class="year-row">2024</span></li>
+        <li><span class="date">4 Jul</span><span>Sustainable packaging design — EIT Food network</span></li>
+        <li><span class="date">17 Jun</span><span><a href="https://designdeclares.com/latest/design-declares-june-event-recap">Co-host — Design Declares</a></span></li>
+        <li><span class="date">11 Jun</span><span>Sustainable design workshop — Logitech (private)</span></li>
+        <li><span class="date">22 May</span><span>Designing our way to a more sustainable future — D&AD Festival</span></li>
+        <li><span class="date">29 Feb</span><span>Designing for reuse — UCL</span></li>
+
+        <li><span class="year-row">2023</span></li>
+        <li><span class="date">5 Dec</span><span><a href="https://www.eventbrite.co.uk/e/design-transforms-jo-barnard-tickets-749141621757">Design Transforms — Central Saint Martins</a></span></li>
+        <li><span class="date">14 Nov</span><span><a href="https://www.eventbrite.co.uk/e/the-future-of-product-design-tickets-739440013987">The Future of Product Design — D&AD</a></span></li>
+        <li><span class="date">17 Oct</span><span><a href="https://www.designcouncil.org.uk/our-events/design-for-planet-festival/">Design for Planet Festival — Design Declares goes global</a></span></li>
+        <li><span class="date">16 Sep</span><span><a href="https://londondesignfestival.com/activities/design-for-planet-collective">Collective Wisdom — London Design Festival</a></span></li>
+        <li><span class="date">25 May</span><span>Talk Design Live — Bangor University</span></li>
+        <li><span class="date">Jan</span><span>The Challenges of Sustainability in Design — Wagamama Annual Conference (private)</span></li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-wrap">
+      <a class="cta" href="mailto:jo@morrama.com?subject=hey%20jo">Email me</a>
+    </section>
+
+  </main>
+
+  <footer>
+    <span>Jo Barnard</span>
+    <nav class="footer-links">
+      <a href="https://www.linkedin.com/in/jobarnard1">LinkedIn</a>
+      <a href="https://instagram.com/barnard_jo">Instagram</a>
+      <a href="https://morrama.com">Morrama</a>
+    </nav>
+  </footer>
+
+</body>
+</html>
