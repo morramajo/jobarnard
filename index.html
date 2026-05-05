@@ -104,10 +104,6 @@
     .press li {
       padding: 0.75rem 0;
       border-bottom: 1px solid var(--rule);
-      display: grid;
-      grid-template-columns: 120px 1fr;
-      gap: 1rem;
-      align-items: baseline;
     }
     .press li:first-child { border-top: 1px solid var(--rule); }
 
@@ -117,15 +113,13 @@
     }
     .press .headline a:hover { text-decoration: underline; }
 
-       }
-    
     .press .pub {
+      display: inline;
       font-size: 0.78rem;
       letter-spacing: 0.06em;
       text-transform: uppercase;
       color: var(--mid);
-      white-space: nowrap;
-
+    }
 
     /* ── TALKS LIST ── */
     .talks { list-style: none; }
@@ -234,50 +228,17 @@
     <section>
       <p class="label">Features</p>
       <ul class="press">
-        <li>
-          <span class="pub">Dezeen</span>
-          <span class="headline"><a href="https://www.dezeen.com/2025/07/08/running-clubs-jo-barnard-opinion/">Design studios should start organising running clubs</a></span>
-        </li>
-        <li>
-          <span class="pub">Dezeen</span>
-          <span class="headline"><a href="https://www.dezeen.com/2025/05/22/regenerative-design-jo-barnard-opinion/">What on earth is regenerative design?</a></span>
-        </li>
-        <li>
-          <span class="pub">BusinessGreen</span>
-          <span class="headline"><a href="https://www.businessgreen.com/opinion/4174863/sustainable-product-design-requires-holistic-th">Sustainable product design requires holistic thinking</a></span>
-        </li>
-        <li>
-          <span class="pub">D&AD</span>
-          <span class="headline"><a href="https://www.dandad.org/annual/2023/editorial/voices-why-the-creative-industry-needs-to-redefine-sustainable-future">Why the creative industry needs to redefine 'good'</a></span>
-        </li>
-        <li>
-          <span class="pub">The Times</span>
-          <span class="headline"><a href="https://www.thetimes.co.uk/article/designers-come-together-to-make-their-mark-on-campaign-against-climate-change-g9str5trb">Designers come together to fight climate change</a></span>
-        </li>
-        <li>
-          <span class="pub">Core77</span>
-          <span class="headline"><a href="https://www.core77.com/posts/109782/20-Woman-led-Industrial-Design-n-Innovation-Firms">20 woman-led industrial design firms to know</a></span>
-        </li>
-        <li>
-          <span class="pub">BBC</span>
-          <span class="headline"><a href="https://www.bbc.co.uk/news/av/business-58970363">CEO Secrets</a></span>
-        </li>
-        <li>
-          <span class="pub">Creative Review</span>
-          <span class="headline"><a href="https://www.creativebrief.com/bite/voices/my-search-female-industrial-design-role-models">My search for female industrial design role models</a></span>
-        </li>
-        <li>
-          <span class="pub">About Time</span>
-          <span class="headline"><a href="https://www.abouttimemagazine.co.uk/life/shestartedit100-top-10-women-to-watch-in-tech-and-stem-2020/">Top 10 women to watch in tech and STEM</a></span>
-        </li>
-        <li>
-          <span class="pub">WIRED</span>
-          <span class="headline">Elon Musk Does It. Sergey Brin Does It. Your Boss Might Do It.</span>
-        </li>
-        <li>
-          <span class="pub">Fast Company</span>
-          <span class="headline"><a href="https://www.fastcompany.com/90751596/millions-of-plastic-covid-tests-end-up-in-landfills-this-biodegradable-test-could-be-a-game-changer">The biodegradable COVID test that could be a game-changer</a></span>
-        </li>
+        <li><span class="headline"><a href="https://www.dezeen.com/2025/07/08/running-clubs-jo-barnard-opinion/">Design studios should start organising running clubs</a></span> <span class="pub">Dezeen</span></li>
+        <li><span class="headline"><a href="https://www.dezeen.com/2025/05/22/regenerative-design-jo-barnard-opinion/">What on earth is regenerative design?</a></span> <span class="pub">Dezeen</span></li>
+        <li><span class="headline"><a href="https://www.businessgreen.com/opinion/4174863/sustainable-product-design-requires-holistic-th">Sustainable product design requires holistic thinking</a></span> <span class="pub">BusinessGreen</span></li>
+        <li><span class="headline"><a href="https://www.dandad.org/annual/2023/editorial/voices-why-the-creative-industry-needs-to-redefine-sustainable-future">Why the creative industry needs to redefine 'good'</a></span> <span class="pub">D&AD</span></li>
+        <li><span class="headline"><a href="https://www.thetimes.co.uk/article/designers-come-together-to-make-their-mark-on-campaign-against-climate-change-g9str5trb">Designers come together to fight climate change</a></span> <span class="pub">The Times</span></li>
+        <li><span class="headline"><a href="https://www.core77.com/posts/109782/20-Woman-led-Industrial-Design-n-Innovation-Firms">20 woman-led industrial design firms to know</a></span> <span class="pub">Core77</span></li>
+        <li><span class="headline"><a href="https://www.bbc.co.uk/news/av/business-58970363">CEO Secrets</a></span> <span class="pub">BBC</span></li>
+        <li><span class="headline"><a href="https://www.creativebrief.com/bite/voices/my-search-female-industrial-design-role-models">My search for female industrial design role models</a></span> <span class="pub">Creative Review</span></li>
+        <li><span class="headline"><a href="https://www.abouttimemagazine.co.uk/life/shestartedit100-top-10-women-to-watch-in-tech-and-stem-2020/">Top 10 women to watch in tech and STEM</a></span> <span class="pub">About Time</span></li>
+        <li><span class="headline">Elon Musk Does It. Sergey Brin Does It. Your Boss Might Do It.</span> <span class="pub">WIRED</span></li>
+        <li><span class="headline"><a href="https://www.fastcompany.com/90751596/millions-of-plastic-covid-tests-end-up-in-landfills-this-biodegradable-test-could-be-a-game-changer">The biodegradable COVID test that could be a game-changer</a></span> <span class="pub">Fast Company</span></li>
       </ul>
     </section>
 
