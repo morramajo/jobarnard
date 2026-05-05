@@ -71,10 +71,16 @@
 
     .photo-wrap img {
       width: 100%;
-      max-width: 340px;
       display: block;
       filter: grayscale(15%);
-      /* ── SWAP THIS SRC for your actual photo ── */
+      object-fit: cover;
+      aspect-ratio: 16 / 9;
+    }
+
+    @media (max-width: 600px) {
+      .photo-wrap img {
+        aspect-ratio: 3 / 4;
+      }
     }
 
     /* ── SECTION LABELS ── */
